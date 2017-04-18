@@ -408,6 +408,66 @@ let globalEvent = weex.requireModule('globalEvent');
     }
 </script>
 ```
+# 跳转到上传视频页面
+    跳转到app上传视频页面
+```
+<!--html-->
+<template>
+    <div @click="call" class="phone"></div>
+</template>
+
+<!--js-->
+<script>let
+     let thaw = weex.requireModule('THAW')
+     export default {
+        call (){
+            //   native操作
+            thaw.onGoVideo();
+        }
+    }
+</script>
+```
+# 浏览大图
+    调用app浏览大图
+```
+<!--html-->
+<template>
+    <div @click="call" class="phone"></div>
+</template>
+
+<!--js-->
+<script>let
+     let thaw = weex.requireModule('THAW')
+     export default {
+        call (){
+            //   native操作
+            thaw.onShowImages({
+                 "current": 0,  //int类型，表示当前图片在集合中的位置，从0开始计数
+                  "urls":["",""]  //JSONArray类型，表示图片链接集合
+            });
+        }
+    }
+</script>
+```
+# 当前位置
+    跳转到app当前位置页面
+```
+<!--html-->
+<template>
+    <div @click="call" class="phone"></div>
+</template>
+
+<!--js-->
+<script>let
+     let thaw = weex.requireModule('THAW')
+     export default {
+        call (){
+            //   native操作
+            thaw.ontoAddress();
+        }
+    }
+</script>
+```
 
 # 如果请求失败，返回格式
 JSON：{state:error,data,"失败原因"}
